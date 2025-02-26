@@ -3,6 +3,7 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
+    font-family: Arial, sans-serif;
 }
 
 
@@ -179,21 +180,12 @@ body::after {
 
 /* Carrusel de imágenes */
 .carrusel {
-    position: relative;
-    width: 100%;
     max-width: 100%;
-    height: 80%; /* Altura fija */
-    max-width: 100%;
-    margin: 0 auto;
-    overflow:hidden;
-    display: block;
-    position: relative;
-    z-index: 2;
+    margin: auto;
 }
 .carousel-item img {
     object-fit: cover;
-    height: 300px;
-    border-radius: 8px;
+    height: 500px;
 }
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.5);
@@ -222,16 +214,26 @@ body::after {
     display: block;
 }
 
-.carrusel-item.activo {
+.carrusel-item.active {
     display: block;
 }
-
-
 
 .p {
 
     text-align: center;
     background-color: #248bb485; 
+}
+
+.container-sobre-mi {
+    display: flex;
+    align-items:center; /* Centra horizontalmente */
+    justify-content:center; /* Centra verticalmente */
+    text-align: center; /* Centra el texto */
+    gap: 20px;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    flex-wrap: wrap;
 }
 
 .h2-sobremiindex {
@@ -241,24 +243,31 @@ body::after {
     font-weight: 700;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     text-align: center;
-    font-size: 5vw;
-    margin: 5vh 0; /* Márgenes superior e inferior relativos al alto de la ventana */
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .p-sobremiindex {
-    font-family: sans-serif;
     font-style: normal;
     z-index: 1;
     color: #ffffff;
     line-height: 1.6;
     width: 100%;
     text-align: center;
-    font-size: 2.5vw;
-    margin: 2vh 0; /* Márgenes superior e inferior relativos al alto de la ventana */
+    font-size: 16px;
+    max-width: 500px;
 }
 
 /* Media queries para ajustar los márgenes en pantallas más pequeñas */
 @media (max-width: 768px) {
+    .container-sobre-mi {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-sobremi {
+        width: 200px; /* Reduce la imagen en móviles */
+    }
     .h2-sobremiindex {
         font-size: 6vw;
         margin: 7vh 0;
@@ -279,12 +288,6 @@ body::after {
         margin: 5vh 0;
     }
 }
-
-.h1-sobremi {
-    text-shadow: #d325d3;
-}
-
-
 
 /* Estilos base del botón */
 .btn-sobremi {
@@ -336,11 +339,9 @@ body::after {
 }
 
 .img-sobremi{
-    width: 30%;
-    float: left; /* Esta propiedad hace que la imagen flote a la derecha del texto */ 
-    margin-left: 10%;
-    z-index: 1;
-    
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
 }
 
 .container {
@@ -406,18 +407,21 @@ body::after {
 
 .footer-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Distribuye los bloques horizontalmente */
+    flex-wrap: nowrap;
+    justify-content: space-between;
     align-items: flex-start;
     background-color: #1e1320c7; /* Fondo del footer */
     padding: 20px 15px;
     text-align: center;
+    overflow-x: auto;
 }
 
 .footer-block {
-    flex: 1 1 200px; /* Ocupa un espacio mínimo de 200px */
+    flex: 1; /* Ocupa un espacio mínimo de 200px */
     margin: 10px;
+    min-width: 200px; /* Tamaño mínimo */
     max-width: 250px; /* Tamaño máximo por bloque */
+    text-align: center;
 }
 
 .footer-block h4 {

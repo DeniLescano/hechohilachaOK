@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para mostrar el elemento actual
     function mostrarItem(index) {
         items.forEach((item, i) => {
-            item.classList.toggle('activo', i === index);
+            item.classList.toggle('active', i === index);
         });
     }
 
