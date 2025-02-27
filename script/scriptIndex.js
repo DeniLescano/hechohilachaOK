@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         img.addEventListener("click", function () {
             const imageSrc = this.src;
             const imageAlt = this.alt;
-            const productName = imageAlt.replace(/\d+/g, "").trim(); // Extrae el nombre sin números
+            const productName = imageAlt.trim();
 
             modalImage.src = imageSrc;
             modalDescription.textContent = `Explora nuestro producto: ${productName}`;
