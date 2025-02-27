@@ -6,13 +6,15 @@ html, body {
     font-family: Arial, sans-serif;
 }
 
-
 /* Estilo general */
 body {
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0; /* Elimina márgenes por defecto */
     padding: 0; /* Elimina relleno por defecto */
     height: 100%; /* Asegura que el fondo cubra la altura completa */
     width: 100%; /* Asegura que el fondo cubra el ancho completo */
+    text-align: center;
+    background-color: #f5f5f5;
 }
 
 body::before {
@@ -177,182 +179,29 @@ body::after {
     }
 }
 
-
-/* Carrusel de imágenes */
-.carrusel {
-    max-width: 100%;
-    margin: auto;
-}
-.carousel-item img {
-    object-fit: cover;
-    height: 500px;
-}
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    padding: 10px;
+header {
+    background-color: #333;
+    color:white;
+    padding: 20px 0;
 }
 
-.carousel-inner {
-    height: 95vh; /* Ajusta las imágenes al alto del carrusel */
-}
-.carousel-inner img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Ajusta la imagen sin distorsión */
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+    letter-spacing: 2px;
 }
 
-.carrusel-item {
-    display: none;
-    width: 100%;
+h2 {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
-.carrusel-item img {
-    object-fit: fill;
-    width: 100%;
-    max-width: 100%;
-    display: block;
-}
-
-.carrusel-item.active {
-    display: block;
-}
-
-.p {
-
-    text-align: center;
-    background-color: #248bb485; 
-}
-
-.container-sobre-mi {
-    display: flex;
-    align-items:center; /* Centra horizontalmente */
-    justify-content:center; /* Centra verticalmente */
-    text-align: center; /* Centra el texto */
-    gap: 20px;
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
-    flex-wrap: wrap;
-}
-
-.h2-sobremiindex {
-    width: 100%;
-    z-index: 1;
-    color: #ffffff;
-    font-weight: 700;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.p-sobremiindex {
-    font-style: normal;
-    z-index: 1;
-    color: #ffffff;
-    line-height: 1.6;
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-    max-width: 500px;
-}
-
-/* Media queries para ajustar los márgenes en pantallas más pequeñas */
-@media (max-width: 768px) {
-    .container-sobre-mi {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .img-sobremi {
-        width: 200px; /* Reduce la imagen en móviles */
-    }
-    .h2-sobremiindex {
-        font-size: 6vw;
-        margin: 7vh 0;
-    }
-    .p-sobremiindex {
-        font-size: 3vw;
-        margin: 3vh 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .h2-sobremiindex {
-        font-size: 8vw;
-        margin: 10vh 0;
-    }
-    .p-sobremiindex {
-        font-size: 4vw;
-        margin: 5vh 0;
-    }
-}
-
-/* Estilos base del botón */
-.btn-sobremi {
-    font-family: sans-serif;
-    font-weight: 700;
-    color: #ffffff;
-    font-size: 16px; /* Corregido */
-    border: none;
-    padding: 10px 30px;
-    box-shadow: 0px 4px 8px rgba(211, 37, 211, 0.4); /* Corregido */
-    text-align: center;
-    background-color: #d325d3;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    position: relative; /* Necesario para posicionar el ícono */
-    float: center;
-    z-index: 1;
-    margin: 7%;
-}
-
-/* Efecto hover del botón */
-.btn-sobremi:hover {
-    font-weight: 500;
-    color: #d325d3;
-    background-color: #ffffff; 
-    transform: scale(1.05); 
-    border: 2px solid #d325d3;
-    border-radius: 50px;
-    text-decoration-line: underline;
-}
-
-/* Ocultar el ícono inicialmente */
-.btn-sobremi .icon {
-    position: absolute;
-    right: -20px; /* Ubicación fuera del botón */
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: all 0.3s ease;
-    color: #ffffff; /* Color inicial */
-}
-
-/* Mostrar el ícono al pasar el cursor */
-.btn-sobremi:hover .icon {
-    right: 10px; /* Aparece dentro del botón */
-    opacity: 1; /* Lo hace visible */
-    color: #d325d3; /* Cambia el color del ícono */
-}
-
-.img-sobremi{
-    width: 250px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.p-sobremi {
-    font-style: normal;
-    z-index: 1;
-    color: #ffffff;
-    line-height: 1.6;
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-    max-width: 500px;
+p {
+    font-size: 1.2em;
+    margin-top: 5px;
+    font-style: italic;
 }
 
 .container {
@@ -368,7 +217,6 @@ body::after {
     margin-left: 50%;
     float: right;
 }
-
 
 .detalle-logo {
     width: 100%; /* Ancho del contenedor */
@@ -399,8 +247,6 @@ body::after {
     text-align: center;
 }
 
-
-
 /* Estilo de los párrafos dentro del contenedor */
 .p-contacto {
     font-size: 1.1rem;  /* Tamaño de fuente ligeramente más grande */
@@ -417,6 +263,28 @@ body::after {
     margin-bottom: 10px; /* Espacio entre "Teléfono" y "Whatsapp" */
 }
 
+section{
+    width: 80%;
+    display: flex;
+    max-width: 900px;
+    height: 430px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+section img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+
+section img:hover{
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
 
 .footer-container {
     display: flex;
