@@ -4,40 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Hechohilacha - Pantalones rebeldes</title>
-    <link rel="stylesheet" href="../styles/stylesIndex.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-mQ93BQmL2P1Z6VtsHNcalNsI5xdENF04z4E2/gKNacNE+Gt59d/Onb6ZEJ2osrAf" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/stylesIndex.css">
 </head>
 <body>
-    <nav >
+    <nav>
         <div class="menu-toggle" id="menu-toggle">
             <span class="bar"> </span>
             <span class="bar"> </span>
-            <span class="bar"></span>
+            <span class="bar"> </span>
         </div>
         <ul class="menu" id="menu">
-    
             <li>
-                <img src="../assets/lista.png" alt="Inicio" class="menu-icon">
-                <a href="../index.html">Inicio</a>
+                <a href="../index.html">
+                    <img src="../assets/home-agreement.png" alt="Inicio" class="menu-icon">
+                    Inicio
+                </a>  
             </li>
             <li>
-                <img src="../assets/catalogo-de-producto.png" alt="Catalogo" class="menu-icon">
-                <a href="../pages/catalogo.html">Catálogo</a>
+                <a href="../pages/catalogo.html">
+                    <img src="../assets/shopping-icon.png" alt="Catalogo" class="menu-icon">
+                    Catálogo
+                </a>
             </li>
             <li>
-                <img src="../assets/avatar-de-perfil.png" alt="Sobre mi" class="menu-icon">
-                <a href="../pages/sobre_mi.html">Sobre Mí</a>
+                <a href="../pages/sobre_mi.html">
+                    <img src="../assets/profile-candidate.png" alt="Sobre mi" class="menu-icon">
+                    Sobre Mí
+                </a>
             </li>
             <li>
-                <img src="../assets/burbuja-de-dialogo.png" alt="Contacto" class="menu-icon">
-                <a class="nav-link" href="#contact">Contacto</a>               
+                <a class="nav-link" href="#contact">
+                    <img src="../assets/message-attachment.png" alt="Contacto" class="menu-icon">
+                    Contacto
+                </a>
             </li>
-            <div>
+            <li>
                 <img src="../assets/logo_horizontal.gif" alt="Logo HechoHilacha" class="menu-gif" >
-            </div> 
+            </li> 
         </ul>
-    </nav>
-    
+    </nav>  
     <div class="container-sobre-mi">
         <h1 >Términos y Condiciones de Uso</h1>
         <p class="p-sobremiindex">Bienvenido a Hechohilacha. Al acceder y utilizar nuestro sitio web y comprar nuestros productos, aceptas los siguientes términos y condiciones. Por favor, lee estos términos cuidadosamente antes de realizar una compra o interactuar con nuestro sitio.</p>
@@ -86,10 +92,14 @@
         <p class="p-sobremiindex"><strong>Email:</strong> cololescano81@gmail.com</p>
         <p class="p-sobremiindex"><strong>Teléfono:</strong> +54 93436207104</p>
     </div>
+
+    <script src="../script/scriptIndex.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </body>  
 
-<footer>
-        <div class="detalle-logo"></div>  
+<footer id="contact">
+    <div class="detalle-logo"></div>
         <div class="footer-container">
             <!-- Medios de Pago -->
             <div class="footer-block">
@@ -112,24 +122,30 @@
                 <ul>
                     <li><a href="../pages/politica_privacidad.html">Política de Privacidad</a></li>
                     <li><a href="../pages/terminos_condiciones.html">Términos y Condiciones</a></li>
+        
                 </ul>
             </div>
     
             <!-- Contacto -->
             <div class="footer-block">
-                <h4>Contáctanos</h4>
+                <h4>Teléfono</h4>
                 <img src="../assets/llamada-telefonica.png">
                 <p>Teléfono: +54 93436207104</p>
+            </div>
+            <div class="footer-block">
+                <h4>Email</h4>
                 <img src="../assets/email.png">
-                <p>Email: cololescano81@gmail.com</p>
+                <p>cololescano81@gmail.com</p>
             </div>
     
             <!-- Redes Sociales -->
             <div class="footer-block">
                 <h4>Redes Sociales</h4>
-                <img src="../assets/logotipo-de-instagram.png" alt="Instagram" class="icon">
-                <a href="https://www.instagram.com/hechohilacha.pantalones?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+                <a href="https://www.instagram.com/hechohilacha.pantalones?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                    <img src="../assets/logotipo-de-instagram.png" alt="Instagram" class="icon">
+                </a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 </html>

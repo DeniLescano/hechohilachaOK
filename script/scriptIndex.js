@@ -33,12 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarItem(currentIndex);
 });
 
-// Configuración del menú responsivo
-document.getElementById('menu-toggle').addEventListener('click', function() {
-    var menu = document.getElementById('menu');
-    menu.classList.toggle('active');
-});
-
 //Modal para los productos del catálogo
 document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll("section img");
@@ -67,5 +61,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
             myModal.show(); // Corrección aquí
         });
+    });
+});
+
+//Menú responsivo
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+    if (!menuToggle || !menu) {
+        console.error("No se encontró el elemento del menú o el toggle.");
+        return;
+    }
+
+    menuToggle.addEventListener("click", function (event) {
+        event.stopPropagation(); // Evita que el evento se propague y cierre el menú inmediatamente
+        menu.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+    });
+
+    document.addEventListener("click", function (event) {
+        // Verifica si el clic fue fuera del menú y el toggle
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menu.classList.remove("active");
+            menuToggle.classList.remove("active");
+        }
     });
 });

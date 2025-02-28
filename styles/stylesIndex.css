@@ -79,6 +79,9 @@ body::after {
 }
 
 .menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
     color: white;
     font-size: 16px;
@@ -91,6 +94,7 @@ body::after {
 
 .menu li a:hover {
     background-color: #fb27867a;
+    transform: scale(1.05);
 }
 
 .menu-gif {
@@ -103,9 +107,9 @@ body::after {
 }
 
 .menu-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
+    width: 28px;
+    height: 28px;
+    filter:drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
 }
 
 .menu-toggle {
@@ -136,55 +140,60 @@ body::after {
         flex-direction: column;  /* Disposición vertical */
         align-items: center;  /* Centra los elementos */
         justify-content: center;  /* Centra los elementos verticalmente */
-        width: 100%;
-        height: 50vh;  /* Altura del menú */
-        max-height: 180px;
-        min-height: 180px;
         position: fixed;
         top: 0;
         left: 0;
+        width: 100%;
+        height: 50vh;  /* Altura del menú */
         background-color: rgba(0, 0, 0, 0.685);
+        transition: top 0.5s ease-in-out;
         z-index: 1001;
     }
 
-    .menu li {
-        line-height: normal;
-        width: 100%;
-        margin: 0;
-        padding: 2px;  /* Ajusta el padding para hacerlo más pequeño */
-        text-align: center;   
-
+    .menu li {   
+        margin: 15px 0;
     }
     
     .menu li a {
-        margin-left: 2% ;
-        padding: 2px;
-        font-size: 12px;  /* Ajusta el tamaño del texto */
-        padding: 4px 4px;  /* Ajusta el padding */
+        font-size: 18px;  /* Ajusta el tamaño del texto */
+        padding: 10px 20px;  /* Ajusta el padding */
+    }
+
+    ul.menu.active {
+        display: flex;
     }
 
     .menu-toggle {
         display: flex;  /* Muestra el icono de hamburguesa */
-        font-size: 20px;  /* Tamaño del icono */
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 2000;
     }
 
-    .menu.active {
-        display: flex;  /* Muestra el menú cuando se activa */
+    .menu-toggle .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.4s;
     }
-}
-
-@media (max-width: 480px) {
-    .menu {
-        height: 50vh;  /* Ajusta la altura del menú */
+    
+    /* ANIMACIÓN DE BARRAS */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(9px, 9px);
     }
 
-    .menu li a {
-        font-size: 12px;  /* Ajusta el tamaño del texto */
-        padding: 4px 4px;  /* Ajusta el padding */
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
     }
 
-    .menu-toggle {
-        font-size: 18px;  /* Ajusta el tamaño del icono */
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(9px, -9px);
     }
 }
 
@@ -242,7 +251,9 @@ body::after {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     text-align: center;
     font-size: 24px;
+    margin-top: 10px;
     margin-bottom: 10px;
+    max-width: 500px;
 }
 
 .p-sobremiindex {
@@ -251,7 +262,7 @@ body::after {
     color: #ffffff;
     line-height: 1.6;
     width: 100%;
-    text-align: center;
+    text-align: justify;
     font-size: 20px;
     max-width: 500px;
 }
@@ -268,22 +279,22 @@ body::after {
     }
     .h2-sobremiindex {
         font-size: 6vw;
-        margin: 7vh 0;
+        margin: 4vh 0;
     }
     .p-sobremiindex {
         font-size: 3vw;
-        margin: 3vh 0;
+        margin: 2vh 0;
     }
 }
 
 @media (max-width: 480px) {
     .h2-sobremiindex {
         font-size: 8vw;
-        margin: 10vh 0;
+        margin: 5vh 0;
     }
     .p-sobremiindex {
         font-size: 4vw;
-        margin: 5vh 0;
+        margin: 2vh 0;
     }
 }
 
