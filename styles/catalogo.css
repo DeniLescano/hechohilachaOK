@@ -430,6 +430,53 @@ section img:hover{
     margin: 5px;
 }
 
+.btn-tablatalles {
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 16px; /* Corregido */
+    border: none;
+    padding: 10px 30px;
+    box-shadow: 0px 4px 8px rgba(211, 37, 211, 0.4); /* Corregido */
+    text-align: center;
+    background-color: #d325d3;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative; /* Necesario para posicionar el ícono */
+    float: center;
+    z-index: 1;
+    margin: 7%;
+}
+
+/* Efecto hover del botón */
+.btn-tablatalles:hover {
+    font-weight: 500;
+    color: #d325d3;
+    background-color: #ffffff; 
+    transform: scale(1.05); 
+    border: 2px solid #d325d3;
+    border-radius: 50px;
+    text-decoration-line: underline;
+}
+
+/* Ocultar el ícono inicialmente */
+.btn-tablatalles .icon {
+    position: absolute;
+    right: -20px; /* Ubicación fuera del botón */
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: #ffffff; /* Color inicial */
+}
+
+/* Mostrar el ícono al pasar el cursor */
+.btn-tablatalles:hover .icon {
+    right: 10px; /* Aparece dentro del botón */
+    opacity: 1; /* Lo hace visible */
+    color: #d325d3; /* Cambia el color del ícono */
+}
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column; /* Coloca los bloques en columnas en pantallas pequeñas */
