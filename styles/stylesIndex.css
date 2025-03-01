@@ -480,6 +480,21 @@ body::after {
     margin: 5px;
 }
 
+.icon {
+    display: flex;            /* Usamos Flexbox para el contenedor */
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    height: 100%;             /* Asegura que el contenedor tenga altura suficiente */
+}
+
+.icon img {
+    width: 100%; /* La imagen se adapta al 100% del contenedor */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    max-width: 150px; /* Puedes establecer un máximo para evitar que el icono se haga demasiado grande */
+    display: block; /* Elimina los márgenes y espaciados que pueden ocurrir alrededor de la imagen */
+    
+}
+
 
 @media (max-width: 768px) {
     .footer-container {
