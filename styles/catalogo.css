@@ -291,6 +291,22 @@ section img:hover{
     filter: contrast(120%);
 }
 
+@media (max-width: 768px) {
+    section{
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: scroll;
+    }
+
+    section img{
+        flex: 1 0 auto;
+        margin: 0 50px;
+        background-color: red;
+        width: 400px;
+        height: 300px;
+    }
+}
+
 .modal-content{
     background-color: rgba(20,20,20,0.9);
     color: white;
@@ -414,7 +430,6 @@ section img:hover{
     max-width: 40px; /* Tamaño de los iconos */
     margin: 5px;
 }
-
 
 @media (max-width: 768px) {
     .footer-container {
