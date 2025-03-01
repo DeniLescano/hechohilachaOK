@@ -1,0 +1,493 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Estilo general */
+body {
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina relleno por defecto */
+    height: 100%; /* Asegura que el fondo cubra la altura completa */
+    width: 100%; /* Asegura que el fondo cubra el ancho completo */
+}
+
+h1{
+    width: 100%;
+    z-index: 1;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+body::before {
+    content: ""; /* Necesario para pseudo-elementos */
+    position: fixed; /* Fija la imagen en la pantalla */
+    background-image: url('../assets/pexels-mccutcheon-5634704.jpg'); /* Ruta de la imagen */
+    z-index: -2; /* Envía al fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que la imagen se mantenga fija al hacer scroll */
+    background-position: center; /* Centra la imagen en la página */
+    top: 0; /* Alinea la imagen al borde superior */
+    left: 0; /* Alinea la imagen al borde izquierdo */
+    width: 100%; /* Asegura que el fondo cubra el 100% del ancho de la ventana */
+    height: 100%; /* Asegura que el fondo cubra el 100% de la altura de la ventana */
+    margin: 0;
+    padding: 0;
+}
+
+body::after {
+    content: ""; /* Necesario para pseudo-elementos */
+    position: fixed; /* Fija el color translúcido en la pantalla */
+    top: 0;
+    left: 0;
+    height: 100%; /* Asegura que el fondo cubra la altura completa */
+    width: 100%; /* Asegura que el fondo cubra el ancho completo */
+    background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% de opacidad */
+    z-index: -1; /* Superpuesto a la imagen, pero detrás del contenido */
+    margin: 0;
+    padding: 0;
+}
+
+/* Menú de navegación */
+.menu {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #040e1859;
+    overflow: hidden;
+    font: 1em sans-serif;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #fb27867a;
+    transform: scale(1.05);
+}
+
+.menu-gif {
+    width: 180px;
+    height: 60px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1000;
+    align-items: center;
+}
+
+.menu-icon {
+    width: 28px;
+    height: 28px;
+    filter:drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: auto; /* Ajusta la altura automáticamente */
+    width: auto; /* Ajusta el ancho automáticamente */
+    z-index: 1002;
+    position: fixed; /* Fija el icono en la pantalla */
+    top: 10px; /* Ajusta la posición desde la parte superior */
+    right: 10px; /* Ajusta la posición desde la parte derecha */
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 30px; /* Tamaño fijo para el ancho */
+    height: 3px; /* Tamaño fijo para la altura */
+    background-color: #ffffff;
+    margin: 5px 0; /* Espaciado fijo entre las barras */
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;  /* Esconde el menú por defecto */
+        flex-direction: column;  /* Disposición vertical */
+        align-items: center;  /* Centra los elementos */
+        justify-content: center;  /* Centra los elementos verticalmente */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh;  /* Altura del menú */
+        background-color: rgba(0, 0, 0, 0.685);
+        transition: top 0.5s ease-in-out;
+        z-index: 1001;
+    }
+
+    .menu li {   
+        margin: 15px 0;
+    }
+    
+    .menu li a {
+        font-size: 18px;  /* Ajusta el tamaño del texto */
+        padding: 10px 20px;  /* Ajusta el padding */
+    }
+
+    ul.menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;  /* Muestra el icono de hamburguesa */
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 2000;
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+    
+    /* ANIMACIÓN DE BARRAS */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(9px, 9px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(9px, -9px);
+    }
+}
+
+/* Carrusel de imágenes */
+.carrusel {
+    max-width: 100%;
+    margin: auto;
+}
+.carousel-item img {
+    object-fit: cover;
+}
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.carousel-inner {
+    height: 95vh; /* Ajusta las imágenes al alto del carrusel */
+}
+.carousel-inner img {
+    height: auto;
+    /*object-fit: cover;*/
+}
+
+@media (max-width:768px){
+    .carousel-inner{
+        height: auto;
+    }
+}
+
+.p {
+
+    text-align: center;
+    background-color: #248bb485; 
+}
+
+.container-sobre-mi {
+    display: flex;
+    align-items:center; /* Centra horizontalmente */
+    justify-content:center; /* Centra verticalmente */
+    text-align: center; /* Centra el texto */
+    gap: 20px;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.h2-sobremiindex {
+    width: 100%;
+    z-index: 1;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 500px;
+}
+
+.p-sobremiindex {
+    font-style: normal;
+    z-index: 1;
+    color: #ffffff;
+    line-height: 1.6;
+    width: 100%;
+    text-align: justify;
+    font-size: 20px;
+    max-width: 500px;
+}
+
+/* Media queries para ajustar los márgenes en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container-sobre-mi {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-sobremi {
+        width: 200px; /* Reduce la imagen en móviles */
+    }
+    .h2-sobremiindex {
+        font-size: 6vw;
+        margin: 4vh 0;
+    }
+    .p-sobremiindex {
+        font-size: 3vw;
+        margin: 2vh 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .h2-sobremiindex {
+        font-size: 8vw;
+        margin: 5vh 0;
+    }
+    .p-sobremiindex {
+        font-size: 4vw;
+        margin: 2vh 0;
+    }
+}
+
+/* Estilos base del botón */
+.btn-sobremi {
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 16px; /* Corregido */
+    border: none;
+    padding: 10px 30px;
+    box-shadow: 0px 4px 8px rgba(211, 37, 211, 0.4); /* Corregido */
+    text-align: center;
+    background-color: #d325d3;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative; /* Necesario para posicionar el ícono */
+    float: center;
+    z-index: 1;
+    margin: 7%;
+}
+
+/* Efecto hover del botón */
+.btn-sobremi:hover {
+    font-weight: 500;
+    color: #d325d3;
+    background-color: #ffffff; 
+    transform: scale(1.05); 
+    border: 2px solid #d325d3;
+    border-radius: 50px;
+    text-decoration-line: underline;
+}
+
+/* Ocultar el ícono inicialmente */
+.btn-sobremi .icon {
+    position: absolute;
+    right: -20px; /* Ubicación fuera del botón */
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: #ffffff; /* Color inicial */
+}
+
+/* Mostrar el ícono al pasar el cursor */
+.btn-sobremi:hover .icon {
+    right: 10px; /* Aparece dentro del botón */
+    opacity: 1; /* Lo hace visible */
+    color: #d325d3; /* Cambia el color del ícono */
+}
+
+.img-sobremi{
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.p-sobremi {
+    font-style: normal;
+    z-index: 1;
+    color: #ffffff;
+    line-height: 1.6;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    max-width: 500px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Columna vertical */
+    align-items:center; /* Centra horizontalmente */
+    justify-content:center; /* Centra verticalmente */
+    text-align: center; /* Centra el texto */
+    padding: center; /* Espaciado interno */
+    margin-top: 2%;
+    margin-right: 10%;
+    margin-bottom: 2%;
+    margin-left: 50%;
+    float: right;
+}
+
+
+.detalle-logo {
+    width: 100%; /* Ancho del contenedor */
+    height: 30px; /* Altura del contenedor */
+    background-image: url('../assets/logo_horizontal.gif'); /* Ruta de la imagen */
+    background-repeat: repeat-x; /* Repetir solo en el eje X */
+    background-size: 120px 30px; /* Tamaño fijo de la imagen */
+    background-position: 0 0, 140px 0; /* Posición de la imagen con espacio */
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo */
+    margin-top: 1vh;
+    margin-bottom: 0%;
+    position: fixed; /* Posición fija */
+    bottom: 0; /* Posición en la parte inferior */
+    left: 0; /* Alineación a la izquierda */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Contenedor principal */
+.div-contacto {
+    margin: 20px auto;  /* Añade espacio alrededor y centra el contenedor */
+    padding: 10px;      /* Añade un poco de espacio interno */
+    background-color: #2c3e5080;  /* Color oscuro de fondo */
+    border-radius: 15px;  /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+    max-width: 500px;  /* Limitar el ancho para mejor visualización */
+    color: #ecf0f1;  /* Texto en color blanco suave */
+    font-family: 'Arial', sans-serif;  /* Fuente moderna */
+    text-align: center;
+}
+
+
+
+/* Estilo de los párrafos dentro del contenedor */
+.p-contacto {
+    font-size: 1.1rem;  /* Tamaño de fuente ligeramente más grande */
+    line-height: 1.6;  /* Espaciado entre líneas */
+    margin-bottom: 20px;  /* Espacio entre párrafos */
+    text-align: justify;  /* Justificar texto para mayor legibilidad */
+    color: #ecf0f1;  /* Color blanco suave */
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacto-item {
+    display: block; /* Esto hará que cada item esté en una nueva línea */
+    margin-bottom: 10px; /* Espacio entre "Teléfono" y "Whatsapp" */
+}
+
+
+.footer-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #1e1320c7; /* Fondo del footer */
+    padding: 20px 15px;
+    text-align: center;
+    overflow-x: auto;
+}
+
+.footer-block {
+    flex: 1; /* Ocupa un espacio mínimo de 200px */
+    margin: 10px;
+    min-width: 200px; /* Tamaño mínimo */
+    max-width: 250px; /* Tamaño máximo por bloque */
+    text-align: center;
+}
+
+.footer-block h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #eee6f0; /* Color del texto */
+}
+
+.footer-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-block ul li {
+    margin: 5px 0;
+}
+
+.footer-block ul li a {
+    text-decoration: none;
+    color: #d9d2db;
+}
+
+.footer-block ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-block p {
+    margin: 5px 0;
+    color: #d9d2db;
+}
+
+.footer-block img {
+    max-width: 40px; /* Tamaño de los iconos */
+    margin: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Coloca los bloques en columnas en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .footer-block {
+        max-width: 100%; /* Ocupa todo el ancho disponible */
+    }
+}
