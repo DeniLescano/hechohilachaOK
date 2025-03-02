@@ -15,17 +15,6 @@ body {
     width: 100%; /* Asegura que el fondo cubra el ancho completo */
 }
 
-h1{
-    width: 100%;
-    z-index: 1;
-    color: #ffffff;
-    font-weight: 700;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
 body::before {
     content: ""; /* Necesario para pseudo-elementos */
     position: fixed; /* Fija la imagen en la pantalla */
@@ -54,6 +43,17 @@ body::after {
     z-index: -1; /* Superpuesto a la imagen, pero detrás del contenido */
     margin: 0;
     padding: 0;
+}
+
+h1{
+    width: 100%;
+    z-index: 1;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 /* Menú de navegación */
@@ -132,6 +132,32 @@ body::after {
     height: 3px; /* Tamaño fijo para la altura */
     background-color: #ffffff;
     margin: 5px 0; /* Espaciado fijo entre las barras */
+}
+
+.instagram-icon {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(2px 2px 4px rgba(255, 0, 127, 0.8));
+}
+
+/* Ajustes en el contenedor del ícono */
+.menu li a.instagram-link {
+    padding: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu li a.instagram-link:hover {
+    background: linear-gradient(135deg, #bc1888 0%,#cc2366 25%,#dc2743 50%,#e6683c 75%,#f09433 100%);
 }
 
 @media (max-width: 768px) {
@@ -293,7 +319,7 @@ body::after {
         margin: 5vh 0;
     }
     .p-sobremiindex {
-        font-size: 4vw;
+        font-size: 20px;
         margin: 2vh 0;
     }
 }

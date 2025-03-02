@@ -15,6 +15,36 @@ body {
     width: 100%; /* Asegura que el fondo cubra el ancho completo */
 }
 
+body::before {
+    content: ""; /* Necesario para pseudo-elementos */
+    position: fixed; /* Fija la imagen en la pantalla */
+    background-image: url('../assets/pexels-mccutcheon-5634704.jpg'); /* Ruta de la imagen */
+    z-index: -2; /* Envía al fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que la imagen se mantenga fija al hacer scroll */
+    background-position: center; /* Centra la imagen en la página */
+    top: 0; /* Alinea la imagen al borde superior */
+    left: 0; /* Alinea la imagen al borde izquierdo */
+    width: 100%; /* Asegura que el fondo cubra el 100% del ancho de la ventana */
+    height: 100%; /* Asegura que el fondo cubra el 100% de la altura de la ventana */
+    margin: 0;
+    padding: 0;
+}
+
+body::after {
+    content: ""; /* Necesario para pseudo-elementos */
+    position: fixed; /* Fija el color translúcido en la pantalla */
+    top: 0;
+    left: 0;
+    height: 100%; /* Asegura que el fondo cubra la altura completa */
+    width: 100%; /* Asegura que el fondo cubra el ancho completo */
+    background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% de opacidad */
+    z-index: -1; /* Superpuesto a la imagen, pero detrás del contenido */
+    margin: 0;
+    padding: 0;
+}
+
 h1{
     width: 100%;
     z-index: 1;
@@ -68,36 +98,6 @@ a{
     text-align: justify;
     font-size: 20px;
     max-width: 500px;
-}
-
-body::before {
-    content: ""; /* Necesario para pseudo-elementos */
-    position: fixed; /* Fija la imagen en la pantalla */
-    background-image: url('../assets/pexels-mccutcheon-5634704.jpg'); /* Ruta de la imagen */
-    z-index: -2; /* Envía al fondo */
-    background-size: cover; /* Hace que la imagen cubra todo el fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-attachment: fixed; /* Hace que la imagen se mantenga fija al hacer scroll */
-    background-position: center; /* Centra la imagen en la página */
-    top: 0; /* Alinea la imagen al borde superior */
-    left: 0; /* Alinea la imagen al borde izquierdo */
-    width: 100%; /* Asegura que el fondo cubra el 100% del ancho de la ventana */
-    height: 100%; /* Asegura que el fondo cubra el 100% de la altura de la ventana */
-    margin: 0;
-    padding: 0;
-}
-
-body::after {
-    content: ""; /* Necesario para pseudo-elementos */
-    position: fixed; /* Fija el color translúcido en la pantalla */
-    top: 0;
-    left: 0;
-    height: 100%; /* Asegura que el fondo cubra la altura completa */
-    width: 100%; /* Asegura que el fondo cubra el ancho completo */
-    background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% de opacidad */
-    z-index: -1; /* Superpuesto a la imagen, pero detrás del contenido */
-    margin: 0;
-    padding: 0;
 }
 
 /* Menú de navegación */
@@ -178,6 +178,32 @@ body::after {
     margin: 5px 0; /* Espaciado fijo entre las barras */
 }
 
+.instagram-icon {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(2px 2px 4px rgba(255, 0, 127, 0.8));
+}
+
+/* Ajustes en el contenedor del ícono */
+.menu li a.instagram-link {
+    padding: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu li a.instagram-link:hover {
+    background: linear-gradient(135deg, #bc1888 0%,#cc2366 25%,#dc2743 50%,#e6683c 75%,#f09433 100%);
+}
+
 @media (max-width: 768px) {
     .menu {
         display: none;  /* Esconde el menú por defecto */
@@ -243,6 +269,7 @@ body::after {
 
 .container-sobre-mi {
     display: flex;
+    flex-direction: column;
     align-items:center; /* Centra horizontalmente */
     justify-content:center; /* Centra verticalmente */
     text-align: center; /* Centra el texto */
@@ -278,7 +305,7 @@ body::after {
         margin: 5vh 0;
     }
     p {
-        font-size: 4vw;
+        font-size: 20px;
         margin: 2vh 0;
     }
 }
