@@ -444,9 +444,10 @@ section img:hover{
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     position: relative; /* Necesario para posicionar el ícono */
-    float: center;
+    float: right; /* Alinea el botón a la derecha */
     z-index: 1;
-    margin: 7%;
+    margin: 1%;
+    max-height: 3.75rem;
 }
 
 /* Efecto hover del botón */
@@ -477,6 +478,7 @@ section img:hover{
     opacity: 1; /* Lo hace visible */
     color: #d325d3; /* Cambia el color del ícono */
 }
+
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column; /* Coloca los bloques en columnas en pantallas pequeñas */
