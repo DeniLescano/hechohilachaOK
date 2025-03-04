@@ -237,7 +237,8 @@ h1{
 }
 
 .carousel-inner {
-    height: 95vh; /* Ajusta las imágenes al alto del carrusel */
+    /*height: 95vh; /* Ajusta las imágenes al alto del carrusel */
+    height: auto;
 }
 .carousel-inner img {
     height: auto;
@@ -522,13 +523,14 @@ h1{
 
 /* Contenedor principal del contacto */
 .container-contacto {
-    display: block;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 30px;
+    align-items:center; /* Centra horizontalmente */
     padding: 20px;
     max-width: 900px;
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 79px;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
