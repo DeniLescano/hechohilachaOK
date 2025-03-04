@@ -87,7 +87,6 @@ h1{
     font-size: 16px;
     font-weight: bold;
     padding: 10px 15px;
-    display: inline-block;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
@@ -316,7 +315,7 @@ h1{
 @media (max-width: 480px) {
     .h2-sobremiindex {
         font-size: 8vw;
-        margin: 5vh 0;
+        margin: 3vh 0;
     }
     .p-sobremiindex {
         font-size: 20px;
@@ -456,7 +455,7 @@ h1{
 .footer-container {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     background-color: #1e1320c7; /* Fondo del footer */
     padding: 20px 15px;
@@ -519,6 +518,95 @@ h1{
     max-width: 150px; /* Puedes establecer un máximo para evitar que el icono se haga demasiado grande */
     display: block; /* Elimina los márgenes y espaciados que pueden ocurrir alrededor de la imagen */
     
+}
+
+/* Contenedor principal del contacto */
+.container-contacto {
+    display: block;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Información de contacto (izquierda) */
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    margin: 10px;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contacto-icon {
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+.contacto-item p {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Formulario de contacto (derecha) */
+.contacto-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    margin: 10px;
+}
+
+.contacto-form h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .container-contacto {
+        padding: 20px;
+    }
+}
+
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #25D366;
+    border-radius: 50px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+    transform: scale(1.05);
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
 }
 
 @media (max-width: 768px) {
