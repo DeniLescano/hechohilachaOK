@@ -372,6 +372,18 @@ section img:hover{
     margin-top: 10px;
 }
 
+@media (max-width: 768px) {
+    /* Ajustes específicos para móviles */
+    .menu-toggle {
+        top: 15px;
+        right: 20px;
+    }
+
+    .modal {
+        top: 40px;
+    }
+}
+
 .fab {
     padding: 20px;
     font-size: 30px;
